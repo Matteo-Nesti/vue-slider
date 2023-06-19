@@ -33,6 +33,22 @@ const app = createApp({
       ],
     };
   },
+  methods: {
+    goNext() {
+      if (this.currentIndex === this.images.length - 1) {
+        this.currentIndex = 0;
+      } else {
+        this.currentIndex++;
+      }
+    },
+    goPrev() {
+      if (this.currentIndex === 0) {
+        this.currentIndex = this.images.length - 1;
+      } else {
+        this.currentIndex--;
+      }
+    },
+  },
 });
 
 app.mount("#root");

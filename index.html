@@ -21,13 +21,14 @@
     <div class="container" id="root">
         <h1>Videogiochi della settimana</h1>
         <div class="gallery">
-            <i class="fa-solid fa-caret-left" id="pre"></i>
+            <i class="fa-solid fa-caret-left" id="pre" @click="goPrev"></i>
             <div id="carousel">
-                <img :src="images[0].image" alt="">
+                <img v-for="(pics, i) in images" v-show="currentIndex === i" :src="pics.image" :alt="pics.title">
             </div>
-            <i class="fa-solid fa-caret-right" id="next"></i>
+            <i class="fa-solid fa-caret-right" id="next" @click="goNext(currentIndex)"></i>
         </div>
         <div class="thumbnails">
+            <img v-for="pics in images" :src="pics.image" :alt="pics.title" class="myCards">
         </div>
     </div>
 </body>
