@@ -103,6 +103,7 @@ h1 {
     display: block;
     position: relative;
     opacity: 0.5;
+    cursor: pointer;
 }
 
 
