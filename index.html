@@ -23,12 +23,18 @@
         <div class="gallery">
             <i class="fa-solid fa-caret-left" id="pre" @click="goPrev"></i>
             <div id="carousel">
-                <img v-for="(pics, i) in images" v-show="currentIndex === i" :src="pics.image" :alt="pics.title">
+                <div class="card" v-for="(pics, i) in images" v-show="currentIndex === i" >
+                    <img :src="pics.image" :alt="pics.title">
+                    <div class="desc-card">
+                        <h2> {{ pics.title }} </h2>
+                        <div> {{ pics.text }} </div>
+                    </div>
+                </div>
             </div>
             <i class="fa-solid fa-caret-right" id="next" @click="goNext(currentIndex)"></i>
         </div>
         <div class="thumbnails">
-            <img v-for="pics in images" :src="pics.image" :alt="pics.title" class="myCards">
+            <img v-for="(pics, i) in images"  :src="pics.image" :alt="pics.title" :class="{active : currentIndex === i}" @click="setIndexOnClick(i)">
         </div>
     </div>
 </body>

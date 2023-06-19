@@ -48,6 +48,11 @@ const app = createApp({
         this.currentIndex--;
       }
     },
+    setIndexOnClick(index) {
+      if (index !== this.currentIndex) {
+        this.currentIndex = index;
+      }
+    },
   },
 });
 
