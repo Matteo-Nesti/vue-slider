@@ -34,7 +34,12 @@
             <i class="fa-solid fa-caret-right" id="next" @click="goNext(currentIndex)"></i>
         </div>
         <div class="thumbnails">
-            <img v-for="(pics, i) in images"  :src="pics.image" :alt="pics.title" :class="{active : currentIndex === i}" @click="setIndexOnClick(i)">
+            <div class="thumb-card" v-for="(pics, i) in images"  >
+                <img :src="pics.image" :alt="pics.title" :class="{active : currentIndex === i}" @click="setIndexOnClick(i)">
+                <div class="desc-thumb-card" :class="{active : currentIndex === i}">
+                    <h5>{{pics.title}}</h5>
+                </div>
+            </div>
         </div>
     </div>
 </body>
